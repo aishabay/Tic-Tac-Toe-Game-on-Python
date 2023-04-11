@@ -23,17 +23,16 @@
 * Open a terminal/Command Prompt on your computer.
 * Run this command inside your terminal to reach a desired directory: `cd your-directory`. For example, `cd Desktop`.
 * Copy the URL for the repository as shown in the example below: 
-![alt text](https://drive.google.com/uc?export=view&id=1qL2W3VYUKULTTr0isZOQwdKd57H4eGZw "Sample for cloning")
+![alt text](https://drive.google.com/uc?export=view&id=1AgJ6kytOvAt0GtdiW46Yt3dp1HpyPwoN "Sample for cloning")
 * Type `git clone` in the terminal, paste the URL you copied earlier, and then run the command. 
-Now you should see that the project from GitHub was cloned into folder "Stock-News-Tracker" in your directory.
-* Run this command to move into the folder "Stock-News-Tracker": `cd Stock-News-Tracker/`
+Now you should see that the project from GitHub was cloned into folder "Finnhub-News-Parser" in your directory.
+* Run this command to move into the folder "Finnhub-News-Parser": `cd Finnhub-News-Parser/`
 * Launch Docker Desktop on your computer
 * Run the command `docker-compose up -d --build`
-* Run the command `docker-compose exec web python manage.py migrate`
 * Paste this URL in your browser: `http://0.0.0.0:8000/news/stock/TSLA/`. If the page opens and you see "News List", then you have followed all the steps correctly. Congratulations!
 * When you are done, just run `docker-compose down`. This will stop the server and remove the container. To start the server again, run `docker-compose up`.
 ### Note:
-You may not immediately see data. In other words, data accessed via the API endpoints might return empty lists. It's because the APScheduler is set to run its jobs once an hour. You will see data in 1 hour. Grab your snacks and be patient!
+You may not immediately see data. In other words, data accessed via the API endpoints might return empty lists. It's because Celery is set to run its jobs once an hour (3600 seconds). You will see data within 1 hour.
 #### Good News:
 If you don't want to wait, you can modify the content of the following news_updater.py file that is located inside news_scheduler folder.
 For example, you can set minutes to 1 instead of 60. This will run jobs every minute.
