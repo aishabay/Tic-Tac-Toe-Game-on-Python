@@ -32,7 +32,7 @@ Now you should see that the project from GitHub was cloned into folder "Finnhub-
 * Paste this URL in your browser: `http://0.0.0.0:8000/news/stock/TSLA/`. If the page opens and you see "News List", then you have followed all the steps correctly. Congratulations!
 * When you are done, just run `docker-compose down`. This will stop the server and remove the container. To start the server again, run `docker-compose up`.
 ### Note:
-You may not immediately see data. In other words, data accessed via the API endpoints might return empty lists. It's because Celery beat is set to run its jobs once an hour (3600 seconds). You will see data within 1 hour.
+You may not immediately see data. In other words, data accessed via the API endpoints might return empty lists. It's because Celery beat is set to run its task once an hour (3600 seconds). You will see data within 1 hour.
 #### Good News:
 If you don't want to wait, you can run a python management command to parse data for the last 2 days and save it into database. This way you can immediately check API endpoints.
 Firstly, open another terminal window and run `docker ps`. Look for the container_id of django_app container and copy it. Then run the command `docker exec -it [container_id] python manage.py download_news`. Voila, go and check endpoints!
