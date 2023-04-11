@@ -35,7 +35,7 @@ Now you should see that the project from GitHub was cloned into folder "Finnhub-
 You may not immediately see data. In other words, data accessed via the API endpoints might return empty lists. It's because Celery beat is set to run its task once an hour (3600 seconds). You will see data within 1 hour.
 #### Good News:
 If you don't want to wait, you can run a python management command to parse data for the last 2 days and save it into database. This way you can immediately check API endpoints.
-Firstly, run the command `docker ps`. Look for the CONTAINER ID of django_app and copy it. Then run the command `docker exec -it [container_id] python manage.py download_news`. Voilà, go and check your endpoints!
+Firstly, run the command `docker ps`. Look for the CONTAINER ID of django_app and copy it. Then run the command `docker exec -it [container_id] python manage.py download_news` replacing the `[container_id]` with a copied one. Voilà, go and check your endpoints!
 
 ## Description of API endpoints
 #### To check if all the endpoints of this application work correctly you can use either browser or a software such as [Postman](https://www.postman.com/downloads/ "Download Postman") or [Insomnia](https://insomnia.rest/download "Download Insomnia").
